@@ -1,13 +1,13 @@
 # SLDecayFinder
 A Marlin processor to identify semi-leptonic decay of heavy (B/C hadron) flavours in jets and count nSLDecays
 
-# SLDecayFinder is a Marlin processor that looks for semi-leptonic decays (currently at generator level) and gives out the number of semi-leptonic decays of heavy flavour(B/C) hadrons in jets.
+SLDecayFinder is a Marlin processor that looks for semi-leptonic decays (currently at generator level) and gives out the number of semi-leptonic decays of heavy flavour(B/C) hadrons in jets.
 
-# The processor can be followed by additional processors to do analysis on semi-leptonic decays.
+The processor can be followed by additional processors to do analysis on semi-leptonic decays.
 
-# the most frequent use of this processor is to correct neutrino energies.
+the most frequent use of this processor is to correct neutrino energies.
 
-# The output of the processor is a collection that contains output parameters (number of semi-leptonic decays and index of decaying hadron in MCParticle collection) and is input of the second processor (NuCorrector, for instance)
+The output of the processor is a collection that contains output parameters (number of semi-leptonic decays and index of decaying hadron in MCParticle collection) and is input of the second processor (NuCorrector, for instance)
 
 Quick steps to build the mymarlin example:
 ------------------------------------------
