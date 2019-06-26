@@ -53,12 +53,6 @@ MySLDecayFinder::MySLDecayFinder() :
     	      				std::string("MCParticle")
     					);
 
-	registerProcessorParameter(	"RootFile",
-					"Name of the output root file",
-					m_rootFile,
-					std::string("MySLDecayFinder.root")
-					);
-
 	registerOutputCollection( 	LCIO::MCPARTICLE,
 					"SemiLeptonicDecays",
 					"Collection of semi-leptonic decays",
@@ -170,7 +164,6 @@ void MySLDecayFinder::ExtractCollections(EVENT::LCEvent *pLCEvent)
 
 void MySLDecayFinder::FindSLDecays(EVENT::LCEvent *pLCEvent)
 {
-	MCParticleVector m_mcUnstableParent;
 	try
 	{
 		const EVENT::LCCollection *pLCCollection = pLCEvent->getCollection(m_mcParticleCollection);
