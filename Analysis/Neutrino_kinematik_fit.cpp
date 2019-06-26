@@ -24,7 +24,7 @@ void Neutrino_kinematik_fit()
 {
 	int E_cm = 500; //CMSEnergy of samples
 	int nbins = 200; //number of bins on each axis in 2D histigrams
-	int cut_error = 1000; //CutError on forming equation for neutrino momenta
+	int cut_error = 100000000; //CutError on forming equation for neutrino momenta
 	string file_dir = "path/to/input/root/files/";
 	string file_name = "name_of_root_file";
 	TFile *file =  TFile::Open((file_dir + file_name + ".root").c_str(), "READONLY");

@@ -7,7 +7,7 @@ A Marlin processor to identify semi-leptonic decay of heavy (B/C hadron) flavour
 
 # the most frequent use of this processor is to correct neutrino energies.
 
-# The neutrino correction is done by a macro and should be separated as an independent processor.
+# The output of the processor is a collection that contains output parameters (number of semi-leptonic decays and index of decaying hadron in MCParticle collection) and is input of the second processor (NuCorrector, for instance)
 
 Quick steps to build the mymarlin example:
 ------------------------------------------
@@ -33,7 +33,7 @@ Quick steps to change this example into your own Marlin plugin:
 ---------------------------------------------------------------
 
     1.) rename source files:
-        
+
         mv include/MyProcessor.h include/ChooseAReasonableNameForThisClass.h
         mv src/MyProcessor.cc src/ChooseAReasonableNameForThisClass.cc
 

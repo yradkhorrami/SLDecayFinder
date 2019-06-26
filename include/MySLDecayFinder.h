@@ -92,41 +92,18 @@ virtual void end() ;
 
 	std::string					m_mcParticleCollection{};
 	std::string					m_rootFile{};
-	std::string					m_outcolSLDecays{};
-	LCCollectionVec*				m_col_SLDecays{};
+	std::string					m_SLDecaysCollection{};
+	LCCollectionVec					*m_col_SLDecays{};
 
 
 	int						m_nSLDecayTotal;
 	int						m_nSLDecayBHad;
 	int						m_nSLDecayCHad;
 
-	double						m_E_vis;
-	double						m_px_vis;
-	double						m_py_vis;
-	double						m_pz_vis;
-	double						m_Hadron_E;
-	double						m_Hadron_px;
-	double						m_Hadron_py;
-	double						m_Hadron_pz;
-	double						m_SLD_vertex_x;
-	double						m_SLD_vertex_y;
-	double						m_SLD_vertex_z;
-	float						m_EnergyCOM;
-	double						m_mcEnergyENu;
-	double						m_mcEnergyELep;
-	double						m_Hadron_mass;
-	double						m_Mass_vis;
-	double						m_mcNu_px;
-	double						m_mcNu_py;
-	double						m_mcNu_pz;
-
-	TFile						*m_pTFile{};
-	TTree						*m_pTTree{};
-	TH1F						*m_hPfoEnergySum{};
-	TH1F						*m_hPfoEnergySumL7A{};
-
-	typedef std::vector<float>			FloatVector;
-	typedef std::vector<const			EVENT::MCParticle*> MCParticleVector;
+	typedef std::vector<int>			IntVector;
+	IntVector					m_BHadronIndex;
+	IntVector					m_CHadronIndex;
+	typedef std::vector<const EVENT::MCParticle*>	MCParticleVector;
 	MCParticleVector				m_mcUnstableParent{};
 	MCParticleVector				m_mcDaughtersVector{};
 

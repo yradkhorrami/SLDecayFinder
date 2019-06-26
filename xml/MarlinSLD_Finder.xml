@@ -7,7 +7,7 @@
     <constant name="CompactFile" value="${lcgeo_DIR}/ILD/compact/${DetectorModel}/${DetectorModel}.xml" />
     <!-- ILD calibration file -->
     <constant name="CalibrationFile" value="/cvmfs/ilc.desy.de/sw/ILDConfig/v02-00-02/StandardConfig/production/Calibration/Calibration_${DetectorModel}.xml" />
-  
+
     <!-- Whether to run the overlay background -->
     <!-- WARNING : By setting this value to true (or True), you must ensure that the overlay files are set in the processor parameters -->
     <constant name="RunOverlay" value="false" />
@@ -19,21 +19,21 @@
     <constant name="RunBeamCalReco" value="true" />
     <!--The BeamCal calibration constant, sim hit energy to calibrated calo hit energy-->
     <constant name="BeamCalCalibrationFactor">79.6</constant>
-    
-    <!-- ***** Input files constants ***** -->        
+
+    <!-- ***** Input files constants ***** -->
     <!-- Geometry model dependant calibration constants from external file -->
     <include ref="${CalibrationFile}" />
-    
+
     <!-- Energy dependant parameters -->
     <include ref="${EnergyParametersFile}" />
-    
+
     <!-- Output files constants -->
     <constant name="OutputBaseName" value="StandardSLD" />
 
     <constant name="PfoOutputFile" value="${OutputBaseName}_SLDecays.root" />
   </constants>
-  
-  
+
+
   <!-- ***** Execute section ***** -->
   <execute>
     <!-- Initialization processors -->
@@ -43,7 +43,7 @@
     <if condition="${RunOverlay}">
       <group name="BgOverlay" />
     </if>
-    
+
     <!-- Tracking digitizers -->
     <group name="TrackingDigi" />
     <!-- Tracking reconstruction -->
@@ -58,7 +58,7 @@
     <group name="MuonDigi" />
     <!-- Particle flow reconstruction -->
     <group name="ParticleFlow" />
-    
+
     <!--BeamCal reconstruction-->
     <if condition="${RunBeamCalReco}">
       <group name="BeamCalReco" />
@@ -66,11 +66,11 @@
 
     <!-- High level reconstruction -->
     <group name="HighLevelReco" />
-    
+
     <!-- Output processors -->
     <processor name="MySLDecayFinder" />
   </execute>
-  
+
   <!-- ***** Global section ***** -->
   <global>
     <parameter name="LCIOInputFiles"> </parameter>
@@ -81,7 +81,7 @@
     <parameter name="RandomSeed" value="1234567890" />
     <parameter name="OutputSteeringFile" value="MarlinStdRecoParsed.xml"/>
   </global>
-  
+
      <processor name="MyStatusmonitor" type="Statusmonitor">
     <!--Statusmonitor prints out information on running Marlin Job: Prints number of runs run and current number of the event. Counting is sequential and not the run or event ID.-->
     <!--Print the event number every N events-->
@@ -152,5 +152,5 @@
     <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
     <!--parameter name="Verbosity" type="string">DEBUG </parameter-->
   </processor>
-  
+
 </marlin>
